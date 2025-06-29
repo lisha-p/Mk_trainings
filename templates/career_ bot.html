@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Career Bot</title>
+</head>
+<body>
+  <h1>🤖 Smart Career Bot</h1>
+  <form method="POST">
+    <label>Enter your skills or interests:</label><br />
+    <input name="interests" required /><br />
+    <button type="submit">Get Suggestion</button>
+  </form>
+  {% if recommendation %}
+  <h3>Recommendation:</h3>
+  <p>{{ recommendation }}</p>
+  {% endif %}
+</body>
+</html>
