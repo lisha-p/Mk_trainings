@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ student.name }}'s Portfolio</title>
+</head>
+<body>
+  <h1>{{ student.name }}'s Portfolio</h1>
+  <p>Email: {{ student.email }}</p>
+  <p>Course: {{ student.course }}</p>
+  <p>Skills: {{ student.skills }}</p>
+  <p>Resume: <a href="{{ student.resume }}" target="_blank">View Resume</a></p>
+
+  <h2>Badges</h2>
+  <ul>
+    {% for b in student.badges %}
+    <li>{{ b }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
