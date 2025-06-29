@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>📊 Admin Dashboard</h1>
+  <a href="/admin/export_csv">⬇ Download CSV</a>
+  <table border="1">
+    <tr>
+      <th>Name</th><th>Email</th><th>Course</th><th>Skills</th><th>Resume</th><th>Action</th>
+    </tr>
+    {% for s in students %}
+    <tr>
+      <td>{{ s.name }}</td>
+      <td>{{ s.email }}</td>
+      <td>{{ s.course }}</td>
+      <td>{{ s.skills }}</td>
+      <td><a href="{{ s.resume }}" target="_blank">View</a></td>
+      <td>
+        <form method="POST" action="/admin/delete/{{ s.key }}">
+          <button type="submit">❌ Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/">⬅ Back</a> | <a href="/logout">Logout</a>
+</body>
+</html>
